@@ -8,9 +8,9 @@ if [ ! -d "/sd-scripts" ] || [ ! "$(ls -A "/sd-scripts")" ]; then
   cd /sd-scripts
   python3.10 -m venv venv
   source venv/bin/activate
+  sed -i '1inumpy<2' requirements.txt
   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121
-  pip uninstall numpy -y
-  pip install numpy<2 torchvision scipy lycoris-lora --extra-index-url https://download.pytorch.org/whl/cu121
+  pip install torchvision scipy lycoris-lora --extra-index-url https://download.pytorch.org/whl/cu121
   accelerate config default
 else
   echo "Files found, starting..."
