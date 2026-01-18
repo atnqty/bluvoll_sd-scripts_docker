@@ -8,6 +8,7 @@ if [ ! -d "/sd-scripts" ] || [ ! "$(ls -A "/sd-scripts")" ]; then
   cd /sd-scripts
   python3.10 -m venv venv
   source venv/bin/activate
+  sed -i 's/==.*//' requirements.txt
   sed -i '1inumpy<2' requirements.txt
   pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121
   pip install torchvision scipy lycoris-lora --extra-index-url https://download.pytorch.org/whl/cu121
