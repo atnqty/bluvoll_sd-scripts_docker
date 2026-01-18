@@ -4,7 +4,7 @@ echo "Starting Stable Diffusion Trainer"
 if [ ! -d "/sd-scripts" ] || [ ! "$(ls -A "/sd-scripts")" ]; then
   echo "Files not found, cloning..."
   mkdir -p /sd-scripts
-  git clone github.com/bluvoll/sd-scripts /sd-scripts
+  git clone https://github.com/bluvoll/sd-scripts.git /sd-scripts
   cd /sd-scripts
   python3.10 -m venv venv
   source venv/bin/activate
